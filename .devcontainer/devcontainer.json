@@ -1,0 +1,75 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+    "name": "Debian",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "installGradle": false,
+            "installMaven": false,
+            "installAnt": false,
+            "installGroovy": false,
+            "version": "17",
+            "additionalVersions": "",
+            "jdkDistro": "tem",
+            "gradleVersion": "7.5.1",
+            "mavenVersion": "3.8.6",
+            "antVersion": "1.10.12",
+            "groovyVersion": "2.5.22"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "installYarnUsingApt": false,
+            "nodeGypDependencies": false,
+            "version": "18",
+            "nvmVersion": "0.39",
+            "nvmInstallPath": "/usr/local/share/nvm",
+            "pnpmVersion": "none"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "configureJupyterlabAllowOrigin": "",
+            "installTools": false,
+            "optimize": false,
+            "enableShared": false,
+            "installJupyterlab": false,
+            "version": "os-provided",
+            "installPath": "/usr/local/python",
+            "toolsToInstall": "flake8,autopep8,black,yapf,mypy,pydocstyle,pycodestyle,bandit,pipenv,virtualenv,pytest,pylint",
+            "httpProxy": ""
+        },
+        "ghcr.io/devcontainers/features/rust:1": {
+            "version": "1.79",
+            "profile": "default",
+            "targets": ""
+        }
+    },
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+
+    // Configure tool-specific properties.
+    "customizations": {
+        "codespaces": {
+            "repositories": {}
+        },
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "zhuangtongfa.Material-theme",
+                "PKief.material-icon-theme",
+                "esbenp.prettier-vscode",
+                "eamodio.gitlens"
+            ],
+            "settings": {
+                "workbench.colorTheme": "One Dark Pro",
+                "workbench.iconTheme": "material-icon-theme"
+            }
+        }
+    }
+
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}
